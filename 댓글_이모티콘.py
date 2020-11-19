@@ -1,7 +1,7 @@
 from tkinter import *
 
 bad_words = ["바보", "멍청이", "똥개"]  # 나쁜 표현
-good_words = ["사랑", "행복", "웃음"]  # 좋은 표현
+check = 0
 
 comment = input("댓글을 입력하세요: ")
 
@@ -18,10 +18,8 @@ def image(title, file):
 for b in bad_words:
     if b in comment:
         image("sad", "Emoticon/sad.gif")
+        check = 1
         break
 
-
-for g in good_words:
-    if g in comment:
-        image("smile", "Emoticon/smile.gif")
-        break
+if check == 0:
+    image("smile", "Emoticon/smile.gif")
